@@ -5,7 +5,8 @@ def vertablero(tablero):
         for i in range(len(fila)):
             if i == len(fila) - 1:
                 print(fila[i], end='\n')
-
+            else:
+                print(fila[i], end='  ')
 
 
 tablero = [
@@ -21,3 +22,5 @@ tablero = [
 [' ', '|', ' ', '|', ' ']
 
 ]
+
+
