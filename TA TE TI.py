@@ -8,6 +8,13 @@ def vertablero(tablero):
             else:
                 print(fila[i], end='  ')
 
+def cambiar_tablero(tablero, posicion, jugador):
+    if jugador:
+        simbolo = 'x'
+    else:
+        simbolo = 'o'
+
+
 
 tablero = [
 
@@ -47,6 +54,8 @@ print('¡Empieza!')
 
 while turno < 9:
     if turno_1:
-        print(f'{jugador_1}Elija una posicion')
-
+        print(f'{jugador_1}, elija una posicion')
+    else:
+        print(f'{jugador_2}, elija una posicion')
+    jugada = int(input())
     
