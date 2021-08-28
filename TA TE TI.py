@@ -68,7 +68,8 @@ def cambiar_tablero(tablero, posicion, jugador):
             return 0
         else:
             return 'Esa Posicion ya esta ocupada'
-        
+    else:
+        return 'Posicion desconocida'
            
 
 
@@ -114,4 +115,6 @@ while turno < 9:
     else:
         print(f'{jugador_2}, elija una posicion')
     jugada = int(input())
+    
+    cambiar_tablero(tablero, jugada, turno_1)
     
