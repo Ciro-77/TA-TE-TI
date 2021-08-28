@@ -1,6 +1,6 @@
 print('TA TE TI')
 print('Proyecto: Cintia, Luciano, Ciro Farias')
-def vertablero(tablero):
+def imprimir_tablero(tablero):
     for fila in tablero:
         for i in range(len(fila)):
             if i == len(fila) - 1:
@@ -106,7 +106,7 @@ jugador_2 = str(input('Ingrese nombre del jugador 2: \n '))
 turno_1 = True
 turno = 0
 print('A continuacion vera los comandos para cada posicion del tablero')
-vertablero(demotablero)
+imprimir_tablero(demotablero)
 print('¡Empieza!')
 
 while turno < 9:
@@ -116,5 +116,12 @@ while turno < 9:
         print(f'{jugador_2}, elija una posicion')
     jugada = int(input())
     
-    cambiar_tablero(tablero, jugada, turno_1)
+    valor = cambiar_tablero(tablero, jugada, turno_1)
+    if valor == 0:
+        turno_1 = not turno_1
+        turno += 1
+        imprimir_tablero(tablero)
+    else:
+        print(valor)
+    
     
