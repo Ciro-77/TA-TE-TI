@@ -43,3 +43,10 @@ turno_1 = True
 turno = 0
 print('A continuacion vera los comandos para cada posicion del tablero')
 vertablero(demotablero)
+print('¡Empieza!')
+
+while turno < 9:
+    if turno_1:
+        print(f'{jugador_1}Elija una posicion')
+
+    
