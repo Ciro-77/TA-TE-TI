@@ -20,6 +20,12 @@ def cambiar_tablero(tablero, posicion, jugador):
             return 0
         else:
             return 'Esa posicion ya esta ocupada'
+    elif posicion == 2:
+        if tablero[4][2] == ' ':
+            tablero[4][2] = simbolo
+            return 0
+        else:
+            return 'Esa Posicion ya esta ocupada'
     
 
 
