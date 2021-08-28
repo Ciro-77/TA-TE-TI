@@ -23,4 +23,8 @@ tablero = [
 
 ]
 
+jugador_1 = str(input('Ingrese nombre del jugador 1: \n'))
+jugador_2 = str(input('Ingrese nombre del jugador 2: \n '))
+turno_1 = True
+turno = 0
 
