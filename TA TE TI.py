@@ -142,8 +142,10 @@ while turno < 9:
         imprimir_tablero(tablero)
         if hay_ganador(tablero) == 1:
             print(jugador_1+' gano!')
+            break
         elif hay_ganador(tablero) == 2:
             print(jugador_2+' gano!')
+            break
     else:
         print(valor)
     
