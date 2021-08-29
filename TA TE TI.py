@@ -10,7 +10,7 @@ def imprimir_tablero(tablero):
                 
                 
 def hay_ganador(tablero):
-    for simbolo in ['x','0']:
+    for simbolo in ['x','o']:
         fila_0 = tablero[0][0] == simbolo and tablero[0][2] == simbolo and tablero[0][4] == simbolo
         fila_2 = tablero[2][0] == simbolo and tablero[2][2] == simbolo and tablero[2][4] == simbolo
         fila_4 = tablero[4][0] == simbolo and tablero[4][2] == simbolo and tablero[4][4] == simbolo
@@ -23,7 +23,7 @@ def hay_ganador(tablero):
         if fila_0 or fila_2 or fila_4 or columna_0 or columna_2 or columna_4 or diagonal_abajo or diagonal_arriba:
             if simbolo =='x':
                 return 1
-            elif simbolo == '0':
+            elif simbolo == 'o':
                 return 0
                 
 
@@ -120,8 +120,8 @@ demotablero = [
 
 ]
 
-jugador_1 = str(input('Ingrese nombre del jugador 1: \n'))
-jugador_2 = str(input('Ingrese nombre del jugador 2: \n '))
+jugador_1 = str(input('Ingrese nombre del jugador 1: \n')).capitalize()
+jugador_2 = str(input('Ingrese nombre del jugador 2: \n ')).capitalize()
 turno_1 = True
 turno = 0
 print('A continuacion vera los comandos para cada posicion del tablero')
@@ -140,8 +140,15 @@ while turno < 9:
         turno_1 = not turno_1
         turno += 1
         imprimir_tablero(tablero)
+        if hay_ganador(tablero) == 1:
+            print(jugador_1+' gano!')
+        elif hay_ganador(tablero) == 2:
+            print(jugador_2+' gano!')
     else:
         print(valor)
     
     if turno==9:
         print('Empate..')
+        
+        
+        
