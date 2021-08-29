@@ -7,6 +7,25 @@ def imprimir_tablero(tablero):
                 print(fila[i], end='\n')
             else:
                 print(fila[i], end='  ')
+                
+                
+def hay_ganador(tablero):
+    for simbolo in ['x','0']:
+        fila_0 = tablero[0][0] == simbolo and tablero[0][2] == simbolo and tablero[0][4] == simbolo
+        fila_2 = tablero[2][0] == simbolo and tablero[2][2] == simbolo and tablero[2][4] == simbolo
+        fila_4 = tablero[4][0] == simbolo and tablero[4][2] == simbolo and tablero[4][4] == simbolo
+        columna_0 = tablero[0][0] == simbolo and tablero[2][0] == simbolo and tablero[4][0] == simbolo
+        columna_2 = tablero[0][2] == simbolo and tablero[2][2] == simbolo and tablero[4][2] == simbolo
+        columna_4 = tablero[0][4] == simbolo and tablero[2][4] == simbolo and tablero[4][4] == simbolo
+        diagonal_abajo = tablero[0][0] == simbolo and tablero[2][2] == simbolo and tablero[4][4] == simbolo
+        diagonal_arriba = tablero[4][0] == simbolo and tablero[2][2] == simbolo and tablero[0][4] == simbolo
+        
+        if fila_0 or fila_2 or fila_4 or columna_0 or columna_2 or columna_4 or diagonal_abajo or diagonal_arriba:
+            if simbolo =='x':
+                return 1
+            elif simbolo == '0':
+                return 0
+                
 
 def cambiar_tablero(tablero, posicion, jugador):
     if jugador:
@@ -124,4 +143,5 @@ while turno < 9:
     else:
         print(valor)
     
-    
+    if turno==9:
+        print('Empate..')
